@@ -1,0 +1,93 @@
+<div class="loks" style="background-image: url('assets/back24.png')">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+
+<!-- <div class="container-fluid">
+  <h1>Hello World!</h1>
+  <p>Resize the browser window to see the effect.</p>
+  <p>The columns will automatically stack on top of each other when the screen is less than 768px wide.</p> -->
+  
+  <div class="row">
+    <div class="col-sm-4" style="">
+<div class="row">
+<div class="container-fluid" style="background-color:black; color: white;text-align: center;padding: 90px 90px 90px 90px" >3h 50m<br>
+ <div class="progress" >1234567891011
+    <div class="progress-bar" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="20" style="width:20%" >
+      
+
+  </div>
+</div>
+</div>
+<br>
+  <div class="col-sm-3" ><button class="btn" (click)="wicket()">WK<span style="color:red;">{{no1}}</span></button></div>
+  <div class="col-sm-3"><button class="btn" (click)="batsman()">BAT<span style="color:red;">{{no2}}</span></button></div>
+  <div class="col-sm-3"><button class ="btn" (click)="ball()" >BWL<span style="color:red;">{{no3}}</span></button></div>
+  <div class="col-sm-3"><button class="btn"  (click)="allr()" > AR<span style="color:red;">{{no4}}</span></button></div>
+    <p style="font-size: 24px; padding: 0px 120px;color: white" >Select players From list</p>
+    <table class="nav">
+      <td>players</td>
+      <td>Credits</td>
+      <td>points</td>
+    </table>
+    <table class="nav2">
+      <tr>
+        <td   *ngFor="let i of WK" [style.display]="display1">{{i}}</td>
+        <td  #item2 *ngFor="let i of BAT" [style.display]="display2">{{i}}</td>
+        <td *ngFor="let i of BALL" [style.display]="display3">{{i}}</td>
+        <td *ngFor="let i of ALLR" [style.display]="display4">{{i}}</td>
+         <td></td>
+          <td *ngFor="let i of credit_point" [style.display]="display1">{{i}}</td>
+          <td *ngFor="let i of credit_point" [style.display]="display2">{{i}}</td>
+          <td *ngFor="let i of credit_point" [style.display]="display3">{{i}}</td>
+          <td *ngFor="let i of credit_point" [style.display]="display4">{{i}}</td>
+     
+          <td></td>
+      <td *ngFor="let i of points_wk" [style.display]="display1">{{i}}</td>
+      <td *ngFor="let i of points_wk" [style.display]="display2">{{i}}</td>
+      <td *ngFor="let i of points_wk" [style.display]="display3">{{i}}</td>
+      <td *ngFor="let i of points_wk" [style.display]="display4">{{i}}</td>
+      <td></td>
+  <td  *ngFor="let i of WK" [style.display]="display1"><span style="display: none" #item1>{{i}}</span><a href="#" class="round-button" (click)="addwicket(item1.innerHTML)">+</a></td>
+  <td  *ngFor="let i of BAT" [style.display]="display2"><span style="display: none" #item1>{{i}}</span><a href="#" class="round-button" (click)="addbatsman(item1.innerHTML)">+</a></td>
+  <td  *ngFor="let i of BALL" [style.display]="display3"><span style="display: none" #item1>{{i}}</span><a href="#" class="round-button" (click)="addbowler(item1.innerHTML)">+</a></td>
+  <td  *ngFor="let i of ALLR" [style.display]="display4"><span style="display: none" #item1>{{i}}</span><a href="#" class="round-button" (click)="addALLR(item1.innerHTML)">+</a></td>
+</tr>
+    </table>
+
+
+</div>
+<!-- </div> -->
+    </div>
+    <div class="col-sm-5" style="background-image: url('assets/pitch.png'); height: 700px;width: 630px">
+<div class="row">
+<div *ngFor="let i of team.batsman" id="two2" class="col-sm-3"> <img src="assets/msd.jpg" height="60px" width="60px;" style="border-radius: 50%"><br>
+  <span style="font-size: 18px; color: white ;text-align: center;letter-spacing: 1px;" #item1>{{i}}<a style="border-color: white;margin-left: 15px" href="#" class="round-button" (click)="removeteam_batsman(item1.innerHTML)">x</a></span>
+</div>
+  <div *ngFor="let i of team.wicket" id="one1" class="col-sm-12"><img src="assets/msd.jpg" height="60px" width="60px;" style="border-radius: 50%;" ><br>
+  <span style="font-size: 18px; color: white ;letter-spacing: 1px;text-align: center;" #item>{{i}}<a style="border-color: white;margin-left: 15px" href="#" class="round-button" (click)="removeteam_wicket(item.innerHTML)" >x</a></span>
+</div>
+
+<div *ngFor="let i of team.bowler" id="three3" class="col-sm-3"><img src="assets/msd.jpg" height="60px" width="60px;" style="border-radius: 50%"><br>
+  <span style="font-size: 18px; color: white ;text-align: center;letter-spacing: 1px;" #item2>{{i}}<a style="border-color: white;margin-left: 15px" href="#" class="round-button" (click)="removeteam_bowler(item2.innerHTML)">x</a></span>
+</div>
+<div *ngFor="let i of team.allrounder" id="four4" class="col-sm-5"><img src="assets/msd.jpg" height="60px" width="60px;" style="border-radius: 50%"><br>
+  <span style="font-size: 18px; color: white ;text-align: center;letter-spacing: 1px;" #item3>{{i}}<a style="border-color: white;margin-left: 15px" href="#" class="round-button" (click)="removeteam_ALLR(item3.innerHTML)">x</a></span>
+</div>
+</div>
+<!-- <div *ngFor="let i of team.batsman">
+  <span #item>{{i}}</span><button (click)="removeteam_batsman(item.innerHTML)"> <i class="fa fa-times" aria-hidden="true"></i></button>
+</div> --><!-- 
+<div *ngFor="let i of team.bowler">
+  <span #item>{{i}}</span><button (click)="removeteam_bowler(item.innerHTML)"> <i class="fa fa-times" aria-hidden="true"></i></button>
+</div> -->
+<!-- <div *ngFor="let i of team.allrounder">
+  <span #item>{{i}}</span><button (click)="removeteam_ALLR(item.innerHTML)"> <i class="fa fa-times" aria-hidden="true"></i></button>
+</div>
+ -->  </div>  
+    
+    <div class="col-sm-3" ><img src="https://11wicketsbucket.s3.ap-south-1.amazonaws.com/elewk/app-sunny.png" height="600px" width="400px"></div>
+  </div>
+</div>
+<!-- </div> -->
